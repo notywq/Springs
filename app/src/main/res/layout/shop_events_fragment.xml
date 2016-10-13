@@ -65,6 +65,7 @@
         android:stretchMode="spacingWidthUniform"
         android:gravity="center"
         android:layout_below="@+id/segmented2"
-        android:layout_alignEnd="@+id/segmented2" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp" />
 
 </RelativeLayout>
