@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="150dp"
+        android:maxWidth="150dp"
+        android:src="@drawable/newsicon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/item_txtauthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/item_txtnewstitle"
+        android:layout_alignStart="@+id/item_txtnewstitle" />
+
+    <TextView
+        android:id="@+id/item_txtdesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Short Description"
+        android:layout_alignBottom="@+id/item_icon"
+        android:layout_alignStart="@+id/item_txtauthor"
+        android:layout_marginBottom="39dp" />
+
+    <TextView
+        android:id="@+id/item_txtnewstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Article"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Read More.."
+        android:id="@+id/textView"
+        android:textIsSelectable="false"
+        android:textColor="#6da0df"
+        android:textColorHighlight="#189af1"
+        android:layout_alignTop="@+id/item_txtnewstitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp" />
+
+</RelativeLayout>

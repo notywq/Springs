@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center"
+    tools:context="com.springs.springs.Profile"
+    android:paddingTop="30dp"
+    android:weightSum="1"
+
+    >
+
+
+
+    <ImageView
+        android:id="@+id/profilepic"
+        android:src="@drawable/noprofilepicture"
+        android:layout_width="193dp"
+        android:layout_height="210dp"
+        android:paddingBottom="20dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:dividerHorizontal"
+        android:showDividers="middle"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Your Name"
+            android:id="@+id/pname"
+            android:layout_gravity="center_horizontal"
+            android:singleLine="false"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Favorites"
+            android:id="@+id/pfave"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="User Info"
+            android:id="@+id/puinfo"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Change Password"
+            android:id="@+id/pchangepass"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Log Out"
+        android:id="@+id/bplogout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#3479d5"
+        android:textColor="#ffffff" />
+
+
+</LinearLayout>

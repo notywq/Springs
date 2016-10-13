@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.springs.springs.LibraryMusic">
+
+
+
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/segmented3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="10dp"
+
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_centerHorizontal="true"
+        android:focusable="false"
+        android:baselineAligned="false"
+        android:gravity="bottom"
+        android:layout_gravity="center_horizontal">
+
+
+        <RadioButton
+            android:id="@+id/seg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Books"
+            style="@style/RadioButton"
+
+            android:minWidth="120dp" />
+
+        <RadioButton
+            android:id="@+id/seg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music"
+            style="@style/RadioButton"
+            android:checked="true"
+            android:minWidth="120dp" />
+
+    </info.hoang8f.android.segmented.SegmentedGroup>
+    <ImageView
+        android:id="@+id/albummain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="200dp"
+        android:maxWidth="200dp"
+        android:src="@drawable/albumcover"
+        android:paddingTop="20dp"
+        android:layout_below="@+id/segmented3"
+        android:layout_alignStart="@+id/segmented3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Album Title"
+        android:id="@+id/txtalbumtitle"
+        android:layout_alignTop="@+id/albummain"
+        android:layout_alignEnd="@+id/segmented3"
+        android:paddingTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Artist"
+        android:id="@+id/txtalbumartist"
+        android:layout_below="@+id/txtalbumtitle"
+        android:layout_alignStart="@+id/txtalbumtitle" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/musiclistview"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/albummain"
+        android:paddingTop="20dp" />
+
+
+</RelativeLayout>
