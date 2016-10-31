@@ -1,4 +1,4 @@
-package com.springs.springs;
+package com.springs.springs.model;
 
 
 public class DetailedImage {

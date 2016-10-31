@@ -11,7 +11,34 @@
 
     <!--   Recycler View Item Row   -->
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/booktitle1"
+        android:id="@+id/titletext"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/author1"
+        android:id="@+id/authtext"
+        android:layout_below="@+id/titletext"
+        android:layout_alignStart="@+id/titletext"
+        android:layout_marginStart="0dp"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:layout_marginTop="-5dp" />
+
     <ImageView
+        android:contentDescription="@string/booktitle1"
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,31 +47,8 @@
         android:maxWidth="140dp"
         android:src="@drawable/img1sample"
         android:paddingEnd="45dp"
+        android:paddingStart="0dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/titletext" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Book Title"
-        android:id="@+id/titletext"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="5dp"
-        android:paddingEnd="0dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Author"
-        android:id="@+id/authtext"
-        android:layout_below="@+id/titletext"
-        android:layout_alignStart="@+id/titletext"
-        android:layout_marginLeft="0dp"
-        android:paddingEnd="0dp"
-        android:layout_marginTop="-5dp" />
 
 </RelativeLayout>

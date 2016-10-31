@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">Springs</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name1">Your Name</string>
+    <string name="fav1">Favorites</string>
+    <string name="userinfo1">User Info</string>
+    <string name="changepass1">Change Password</string>
+    <string name="logout1">Log Out</string>
+    <string name="booktitle1">Book Title</string>
+    <string name="author1">Author</string>
+    <string name="feattitles">Featured Titles</string>
+    <string name="seeall">See All >      </string>
+    <string name="books">Books</string>
+    <string name="music">Music</string>
+    <string name="events">Events</string>
+    <string name="artist">Artist</string>
+    <string name="albumtitle">Album Title</string>
 </resources>

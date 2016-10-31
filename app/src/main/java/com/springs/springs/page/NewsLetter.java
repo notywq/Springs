@@ -1,6 +1,7 @@
-package com.springs.springs;
+package com.springs.springs.page;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.springs.springs.model.DetailedImage;
+import com.springs.springs.R;
 
 import java.util.ArrayList;
 
@@ -23,7 +27,7 @@ import java.util.ArrayList;
 public class NewsLetter extends Fragment {
 
     View v;
-    ArrayList<DetailedImage> news = new ArrayList<DetailedImage>();
+    ArrayList<DetailedImage> news = new ArrayList<>();
     LayoutInflater v2;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,12 +73,13 @@ public class NewsLetter extends Fragment {
     }
 
     private class MyListAdapter extends ArrayAdapter<DetailedImage> {
-        public MyListAdapter() {
+        MyListAdapter() {
             super(getActivity(), R.layout.news_item_view, news);
         }
 
+        @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             // Make sure we have a view to work with (may have been given null)
             View itemView = convertView;
             if (itemView == null) {

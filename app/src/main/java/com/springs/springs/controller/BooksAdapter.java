@@ -1,4 +1,4 @@
-package com.springs.springs;
+package com.springs.springs.controller;
 
 
 import android.content.Context;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.springs.springs.R;
+import com.springs.springs.model.DetailedImage;
 
 import java.util.ArrayList;
 
@@ -56,9 +59,9 @@ public class BooksAdapter extends BaseAdapter {
         if (convertView == null) {
             final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
             if(mode == 1)
-                convertView = layoutInflater.inflate(R.layout.book_grid_view, null);
+                convertView = layoutInflater.inflate(R.layout.book_grid_view, parent,false);
             else if(mode == 2)
-                convertView = layoutInflater.inflate(R.layout.book_solo, null);
+                convertView = layoutInflater.inflate(R.layout.book_solo, parent,false);
 
         }
 

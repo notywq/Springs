@@ -1,4 +1,4 @@
-package com.springs.springs;
+package com.springs.springs.page;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 
-import android.support.v7.widget.AppCompatDrawableManager;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.springs.springs.R;
+import com.springs.springs.model.DetailedImage;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -26,12 +28,16 @@ import java.util.List;
 public class Home extends Fragment {
     public static final String[] TITLES= {"Hood","Full Sleeve Shirt","Shirt","Hood","Full Sleeve Shirt","Shirt"};
     public static final Integer[] IMAGES= {R.drawable.img1sample,R.drawable.img2sample,R.drawable.img3sample,R.drawable.img1sample,R.drawable.img2sample,R.drawable.img3sample};
-    private static RecyclerView recyclerView;
     private static String navigateFrom;//String to get Intent Value
 
     private RecyclerView horizontal_recycler_view;
     private ArrayList<DetailedImage> horizontalList;
     private HorizontalAdapter horizontalAdapter;
+
+    int[] sampleImages = {R.drawable.happysample,R.drawable.happysample,R.drawable.happysample,R.drawable.happysample,R.drawable.happysample};
+    Context context;
+    private android.support.v7.widget.Toolbar toolbar;
+
 
     View v;
 
@@ -40,7 +46,7 @@ public class Home extends Fragment {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {
 
-            Drawable d = getResources().getDrawable(sampleImages[position]);
+            Drawable d = ResourcesCompat.getDrawable(getResources(),sampleImages[position],null);
             // imageView.setImageResource(sampleImages[position]);
             imageView.setImageDrawable(d);
 
@@ -48,10 +54,6 @@ public class Home extends Fragment {
         }
     };
 
-
-    int[] sampleImages = {R.drawable.happysample,R.drawable.happysample,R.drawable.happysample,R.drawable.happysample,R.drawable.happysample};
-    Context context;
-    private android.support.v7.widget.Toolbar toolbar;
 
 
 
@@ -101,12 +103,12 @@ public class Home extends Fragment {
 
         private List<DetailedImage> horizontalList;
 
-        public class MyViewHolder extends RecyclerView.ViewHolder {
-            public TextView title;
-            public ImageView image;
-            public TextView author;
+        class MyViewHolder extends RecyclerView.ViewHolder {
+            TextView title;
+            ImageView image;
+            TextView author;
 
-            public MyViewHolder(View view) {
+            MyViewHolder(View view) {
                 super(view);
                 title = (TextView) view.findViewById(R.id.titletext);
                 image = (ImageView)view.findViewById(R.id.imageView3);
@@ -116,7 +118,7 @@ public class Home extends Fragment {
         }
 
 
-        public HorizontalAdapter(List<DetailedImage> horizontalList) {
+        HorizontalAdapter(List<DetailedImage> horizontalList) {
             this.horizontalList = horizontalList;
         }
 

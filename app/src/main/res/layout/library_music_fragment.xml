@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.springs.springs.LibraryMusic">
+    tools:context="com.springs.springs.page.LibraryMusic">
 
 
 
@@ -19,7 +19,7 @@
 
         android:layout_alignParentEnd="false"
         android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
         android:layout_centerHorizontal="true"
         android:focusable="false"
         android:baselineAligned="false"
@@ -31,7 +31,7 @@
             android:id="@+id/seg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Books"
+            android:text="@string/books"
             style="@style/RadioButton"
 
             android:minWidth="120dp" />
@@ -40,13 +40,14 @@
             android:id="@+id/seg2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Music"
+            android:text="@string/music"
             style="@style/RadioButton"
             android:checked="true"
             android:minWidth="120dp" />
 
     </info.hoang8f.android.segmented.SegmentedGroup>
     <ImageView
+        android:contentDescription="@string/music"
         android:id="@+id/albummain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Album Title"
+        android:text="@string/albumtitle"
         android:id="@+id/txtalbumtitle"
         android:layout_alignTop="@+id/albummain"
         android:layout_alignEnd="@+id/segmented3"
@@ -72,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Artist"
+        android:text="@string/artist"
         android:id="@+id/txtalbumartist"
         android:layout_below="@+id/txtalbumtitle"
         android:layout_alignStart="@+id/txtalbumtitle" />

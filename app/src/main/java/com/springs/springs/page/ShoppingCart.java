@@ -1,4 +1,4 @@
-package com.springs.springs;
+package com.springs.springs.page;
 
 
 import android.os.Bundle;
@@ -12,6 +12,10 @@ import android.widget.GridView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.springs.springs.controller.BooksAdapter;
+import com.springs.springs.model.DetailedImage;
+import com.springs.springs.R;
+
 import java.util.ArrayList;
 
 import info.hoang8f.android.segmented.SegmentedGroup;
@@ -20,10 +24,10 @@ import info.hoang8f.android.segmented.SegmentedGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShopEvents extends Fragment {
+public class ShoppingCart extends Fragment {
 
     View v;
-    public ShopEvents() {
+    public ShoppingCart() {
         // Required empty public constructor
     }
 
@@ -32,7 +36,7 @@ public class ShopEvents extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.shop_events_fragment, container, false);
+        v = inflater.inflate(R.layout.shopping_cart_fragment, container, false);
 
         GridView gridView = (GridView)v.findViewById(R.id.bookgridview);
 

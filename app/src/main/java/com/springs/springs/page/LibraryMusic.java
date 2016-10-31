@@ -1,6 +1,7 @@
-package com.springs.springs;
+package com.springs.springs.page;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -8,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.springs.springs.R;
+import com.springs.springs.model.DetailedImage;
 
 import java.util.ArrayList;
 
@@ -112,12 +115,13 @@ public class LibraryMusic extends Fragment {
     }
 
     private class MyListAdapter extends ArrayAdapter<DetailedImage> {
-        public MyListAdapter() {
+        MyListAdapter() {
             super(getActivity(), R.layout.song_item_view, music);
         }
 
+        @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             // Make sure we have a view to work with (may have been given null)
             View itemView = convertView;
             if (itemView == null) {

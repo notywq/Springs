@@ -1,8 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.springs.springs.Library">
+    tools:context="com.springs.springs.page.Library">
 
 
 
@@ -19,7 +19,7 @@
 
         android:layout_alignParentEnd="false"
         android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
         android:layout_centerHorizontal="true"
         android:focusable="false"
         android:baselineAligned="false"
@@ -31,7 +31,7 @@
             android:id="@+id/seg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Books"
+            android:text="@string/books"
             style="@style/RadioButton"
             android:checked="true"
             android:minWidth="120dp" />
@@ -40,7 +40,7 @@
             android:id="@+id/seg2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Music"
+            android:text="@string/music"
             style="@style/RadioButton"
             android:minWidth="120dp" />
 
@@ -56,10 +56,9 @@
         android:horizontalSpacing="10dp"
         android:stretchMode="spacingWidthUniform"
         android:gravity="center"
-        android:layout_below="@+id/segmented3"
-        android:layout_alignEnd="@+id/segmented3"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="10dp" />
+        android:layout_below="@+id/segmented3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
-</FrameLayout>
+</RelativeLayout>

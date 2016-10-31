@@ -1,33 +1,35 @@
-package com.springs.springs;
+package com.springs.springs.page;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
+import com.springs.springs.R;
 import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.Fragment;
+
 import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
     CarouselView carouselView;
     private Toolbar toolbar;
+    private BottomBar bottomBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity);
-        getSupportActionBar().hide();
-
+        if(getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();
+        }
+        bottomBar = (BottomBar) findViewById(R.id.bottomBar);
 //        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
 //        setSupportActionBar(toolbar);
 
-        final BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {

@@ -1,4 +1,4 @@
-package com.springs.springs;
+package com.springs.springs.page;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.springs.springs.R;
+
 
 public class Profile extends Fragment {
 
@@ -21,8 +23,8 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.profile_fragment, container, false);
-        TextView name = (TextView)v.findViewById(R.id.pname);
-        name.setText("Jason Borne");
+        //TextView name = (TextView)v.findViewById(R.id.pname);
+        //name.setText("Jason Borne");
 
         Button b = (Button) v.findViewById (R.id.bplogout);
         b.setOnClickListener(new View.OnClickListener() {

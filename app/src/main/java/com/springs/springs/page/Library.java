@@ -1,5 +1,4 @@
-package com.springs.springs;
-
+package com.springs.springs.page;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +11,10 @@ import android.widget.GridView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.springs.springs.R;
+import com.springs.springs.controller.BooksAdapter;
+import com.springs.springs.model.DetailedImage;
+
 import java.util.ArrayList;
 
 import info.hoang8f.android.segmented.SegmentedGroup;
@@ -19,32 +22,28 @@ import info.hoang8f.android.segmented.SegmentedGroup;
 
 /**
  * A simple {@link Fragment} subclass.
+
  */
-public class ShopMusic extends Fragment {
-
+public class Library extends Fragment {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     View v;
-    public ShopMusic() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.shop_music_fragment, container, false);
-
-        GridView gridView = (GridView)v.findViewById(R.id.musicgridview);
+        v = inflater.inflate(R.layout.library_fragment, container, false);
+        GridView gridView = (GridView)v.findViewById(R.id.librarybookgridview);
 
         final ArrayList<DetailedImage> books = new ArrayList<>();
         for(int i = 0; i < 10; i+=2) {
-            books.add(new DetailedImage("Music "+ (i+1), "Drake", "This is Audio number "+(i+1)+"..", R.drawable.audioshop));
-            books.add(new DetailedImage("Music "+ (i+2), "Beyonce", "This is Audio number "+(i+2)+"..", R.drawable.audioshop));
+            books.add(new DetailedImage("Book "+ (i+1), "Justin Pleyto", "This is book number "+(i+1)+"..", R.drawable.img1sample));
+            books.add(new DetailedImage("Book "+ (i+2), "Baron Dim", "This is book number "+(i+2)+"..", R.drawable.img2sample));
 
         }
 
 
-        final BooksAdapter booksAdapter = new BooksAdapter(getContext(), books,1);
+        final BooksAdapter booksAdapter = new BooksAdapter(getContext(), books,2);
         gridView.setAdapter(booksAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,7 +54,7 @@ public class ShopMusic extends Fragment {
 
                 // This tells the GridView to redraw itself
                 // in turn calling your BooksAdapter's getView method again for each cell
-                String message = "Album " + (position+1)
+                String message = "Book " + (position+1)
                         + " selected, title: " + book.getTitle();
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 booksAdapter.notifyDataSetChanged();
@@ -64,28 +63,24 @@ public class ShopMusic extends Fragment {
 
 
 
-        ((SegmentedGroup) v.findViewById(R.id.segmented2)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ((SegmentedGroup) v.findViewById(R.id.segmented3)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 FragmentTransaction ft;
                 ft = getActivity().getSupportFragmentManager().beginTransaction();
                 Fragment f;
                 switch (checkedId) {
-                    case R.id.button21:
+                    case R.id.seg1:
                         Toast.makeText(getActivity(), "BOOKS", Toast.LENGTH_SHORT).show();
-                        f = new ShoppingCart();
+                        f = new Library();
                         ft.replace(R.id.tabcontent, f);
                         break;
-                    case R.id.button22:
+                    case R.id.seg2:
                         Toast.makeText(getActivity(), "MUSIC", Toast.LENGTH_SHORT).show();
-                        f = new ShopMusic();
+                        f = new LibraryMusic();
                         ft.replace(R.id.tabcontent,f);
                         break;
-                    case R.id.button23:
-                        Toast.makeText(getActivity(), "EVENTS", Toast.LENGTH_SHORT).show();
-                        f = new ShopEvents();
-                        ft.replace(R.id.tabcontent, f);
-                        break;
+
                 }
                 ft.commit();
             }
