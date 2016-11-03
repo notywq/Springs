@@ -49,8 +49,8 @@
             android:id="@+id/textView2"
             android:textColor="@color/radio_button_selected_color"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/textView4"
-            android:layout_marginStart="210dp" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"/>
 
     </RelativeLayout>
 

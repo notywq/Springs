@@ -5,8 +5,35 @@ public class DetailedImage {
 
     private int icon;
     private String title;
+    private String iconurl;
     private String author;
     private String description;
+    private int id;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getIconurl() {
+        return iconurl;
+    }
+
+    public void setIconurl(String iconurl) {
+        this.iconurl = iconurl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getIcon() {
         return icon;
@@ -47,5 +74,9 @@ public class DetailedImage {
         this.description = description;
         this.author = author;
 
+    }
+
+    public DetailedImage(){
+        this.iconurl = "";
     }
 }

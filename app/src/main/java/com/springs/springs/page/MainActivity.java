@@ -3,6 +3,7 @@ package com.springs.springs.page;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     CarouselView carouselView;
     private Toolbar toolbar;
     private BottomBar bottomBar;
+    boolean startnews = true;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,27 +33,43 @@ public class MainActivity extends AppCompatActivity {
 //        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
 //        setSupportActionBar(toolbar);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+
             @Override
             public void onTabSelected(@IdRes int tabId) {
+                if(tabId == R.id.tab_newsletter && startnews) {
+                    tabId = R.id.tab_home;
+                    startnews = false;
+                }
+                if(tabId == R.id.tab_home){
+                    Log.d("news","WENT IN HOMES AGAD");
+                    Toast.makeText(getApplicationContext(), "selected! Home", Toast.LENGTH_SHORT).show();
+                    Home home = new Home();
+                    android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.tabcontent, home);
+                    transaction.commit();
 
+                }
 
-
-                if (tabId == R.id.tab_newsletter) {
-                    // The tab with id R.id.tab_favorites was selected,
-                    // change your content accordingly.
-
-                  //  n.setBadgeCount(5);
-//
-//                    Toast.makeText(getApplicationContext(), "selected! NewsLetter", Toast.LENGTH_SHORT).show();
+                else if (tabId == R.id.tab_newsletter)
+                {
+                    Log.d("news","WENT IN NEWS AGAD");
+                    Toast.makeText(getApplicationContext(), "selected! NewsLetter", Toast.LENGTH_SHORT).show();
                     NewsLetter newsletter = new NewsLetter();
                     android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.tabcontent, newsletter);
                     transaction.commit();
 
                 }
-                else if(tabId == R.id.tab_cart){
+                else if(tabId == R.id.tab_cart)
+                {
+                    Log.d("news","WENT IN CART AGAD");
                     Toast.makeText(getApplicationContext(), "selected! Cart", Toast.LENGTH_SHORT).show();
                     ShoppingCart shoppingCart = new ShoppingCart();
                     android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -58,15 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
-                else if(tabId == R.id.tab_home){
 
-                    Toast.makeText(getApplicationContext(), "selected! Home", Toast.LENGTH_SHORT).show();
-                    Home home = new Home();
-                    android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.tabcontent, home);
-                    transaction.commit();
-
-                }
                 else if(tabId == R.id.tab_books){
                     Toast.makeText(getApplicationContext(), "selected! Books", Toast.LENGTH_SHORT).show();
                     Library library = new Library();
@@ -86,9 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        bottomBar.selectTabAtPosition(2);
-
+        bottomBar.selectTabWithId(R.id.tab_home);
 
     }
-
 }

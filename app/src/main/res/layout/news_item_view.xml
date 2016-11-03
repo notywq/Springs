@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="150dp"
-        android:maxWidth="150dp"
         android:src="@drawable/newsicon"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
@@ -21,15 +20,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/item_txtnewstitle"
         android:layout_alignStart="@+id/item_txtnewstitle" />
-
-    <TextView
-        android:id="@+id/item_txtdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Short Description"
-        android:layout_alignBottom="@+id/item_icon"
-        android:layout_alignStart="@+id/item_txtauthor"
-        android:layout_marginBottom="39dp" />
 
     <TextView
         android:id="@+id/item_txtnewstitle"
@@ -55,5 +45,14 @@
         android:layout_alignTop="@+id/item_txtnewstitle"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="25dp" />
+
+    <TextView
+        android:id="@+id/item_txtdesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Short Description"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/item_txtauthor"
+        android:layout_alignStart="@+id/item_txtauthor" />
 
 </RelativeLayout>
