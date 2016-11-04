@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.springs.springs.R;
+import com.springs.springs.controller.OkHttpHandler;
 import com.synnapps.carouselview.CarouselView;
 
 import android.widget.Toolbar;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private BottomBar bottomBar;
     boolean startnews = true;
+    private OkHttpHandler client;
 
 
     @Override

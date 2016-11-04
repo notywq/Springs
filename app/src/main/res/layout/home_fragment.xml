@@ -17,7 +17,7 @@
         app:strokeColor="#FF777777"
 
         app:strokeWidth="1dp"
-        android:background="@drawable/happysample"
+
         android:layout_gravity="center"
         android:layout_alignParentStart="true" />
 

@@ -18,6 +18,7 @@ import com.springs.springs.model.DetailedImage;
 import java.util.ArrayList;
 
 import info.hoang8f.android.segmented.SegmentedGroup;
+import okhttp3.HttpUrl;
 
 
 /**
@@ -40,7 +41,11 @@ public class Library extends Fragment {
             books.add(new DetailedImage("Book "+ (i+1), "Justin Pleyto", "This is book number "+(i+1)+"..", R.drawable.img1sample));
             books.add(new DetailedImage("Book "+ (i+2), "Baron Dim", "This is book number "+(i+2)+"..", R.drawable.img2sample));
 
-        }
+
+
+
+            }
+
 
 
         final BooksAdapter booksAdapter = new BooksAdapter(getContext(), books,2);

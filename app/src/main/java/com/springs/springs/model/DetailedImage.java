@@ -10,6 +10,24 @@ public class DetailedImage {
     private String description;
     private int id;
     private String date;
+    private boolean isFeatured;
+    private boolean isInLibrary;
+
+    public boolean isInLibrary() {
+        return isInLibrary;
+    }
+
+    public void setInLibrary(boolean inLibrary) {
+        isInLibrary = inLibrary;
+    }
+
+    public boolean isFeatured() {
+        return isFeatured;
+    }
+
+    public void setFeatured(boolean featured) {
+        isFeatured = featured;
+    }
 
     public String getDate() {
         return date;
@@ -73,10 +91,14 @@ public class DetailedImage {
         this.title = title;
         this.description = description;
         this.author = author;
+        this.isFeatured = true;
+        this.isInLibrary = false;
 
     }
 
     public DetailedImage(){
         this.iconurl = "";
+        this.isFeatured = true;
+        this.isInLibrary = false;
     }
 }
