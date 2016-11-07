@@ -31,6 +31,8 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Log Out Pressed!", Toast.LENGTH_SHORT).show();
+
+
             }
         });
 
